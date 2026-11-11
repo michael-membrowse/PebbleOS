@@ -132,7 +132,7 @@
   {
     "target_name": "native-flint",
     "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev libsdl2-dev pkg-config && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
-    "build_cmd": "pbl configure --board native_flint \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" && pbl build",
+    "build_cmd": "pbl configure --board native_flint \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" \"-DCMAKE_C_FLAGS=-Wno-error=incompatible-pointer-types-discards-qualifiers\" && pbl build",
     "elf": "build/pebbleos",
     "ld": "",
     "map_file": "build/pebbleos.map",
@@ -142,7 +142,7 @@
   {
     "target_name": "native-emery",
     "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev libsdl2-dev pkg-config && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
-    "build_cmd": "pbl configure --board native_emery \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" && pbl build",
+    "build_cmd": "pbl configure --board native_emery \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" \"-DCMAKE_C_FLAGS=-Wno-error=incompatible-pointer-types-discards-qualifiers\" && pbl build",
     "elf": "build/pebbleos",
     "ld": "",
     "map_file": "build/pebbleos.map",
@@ -152,7 +152,7 @@
   {
     "target_name": "native-gabbro",
     "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev libsdl2-dev pkg-config && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
-    "build_cmd": "pbl configure --board native_gabbro \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" && pbl build",
+    "build_cmd": "pbl configure --board native_gabbro \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" \"-DCMAKE_C_FLAGS=-Wno-error=incompatible-pointer-types-discards-qualifiers\" && pbl build",
     "elf": "build/pebbleos",
     "ld": "",
     "map_file": "build/pebbleos.map",
