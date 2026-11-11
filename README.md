@@ -6,6 +6,7 @@
   <a href="https://github.com/coredevices/PebbleOS/actions/workflows/build-firmware.yml?query=branch%3Amain"><img src="https://github.com/coredevices/PebbleOS/actions/workflows/build-firmware.yml/badge.svg?branch=main"></a>
   <a href="https://pebbleos.readthedocs.io/latest"><img src="https://readthedocs.org/projects/pebbleos/badge/?version=latest&style=flat"></a>
   <a href="https://forum.repebble.com/"><img src="https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.repebble.com&label=forum"></a>
+  <a href="https://membrowse.com/public/coredevices/PebbleOS"><img src="https://membrowse.com/badge.svg"></a>
 </p>
 
 ## Resources

@@ -1,0 +1,162 @@
+[
+  {
+    "target_name": "asterix",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'asterix' -DCONFIG_FIRMWARE_SLOT=0 -DCONFIG_RELEASE=y -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "obelix-dvt",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'obelix@dvt' -DCONFIG_FIRMWARE_SLOT=0 -DCONFIG_RELEASE=y -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "obelix-pvt",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'obelix@pvt' -DCONFIG_FIRMWARE_SLOT=0 -DCONFIG_RELEASE=y -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "getafix-dvt",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'getafix@dvt' -DCONFIG_FIRMWARE_SLOT=0 -DCONFIG_RELEASE=y -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "getafix-dvt2",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'getafix@dvt2' -DCONFIG_FIRMWARE_SLOT=0 -DCONFIG_RELEASE=y -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "asterix-prf",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'asterix' --variant prf -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "obelix-dvt-prf",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'obelix@dvt' --variant prf -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "obelix-pvt-prf",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'obelix@pvt' --variant prf -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "getafix-dvt-prf",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'getafix@dvt' --variant prf -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "getafix-dvt2-prf",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'getafix@dvt2' --variant prf -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "qemu-flint",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'qemu_flint' -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "qemu-emery",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'qemu_emery' -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "qemu-gabbro",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board 'qemu_gabbro' -DCONFIG_LINKER_MAP=y && pbl build && RAM_SIZE=0x$(nm build/pebbleos.elf | awk '$3==\"__RAM_size__\"{print $1}') && sed -E \"/^ *RAM \\(xrw\\) :/{n;s/LENGTH = .*/LENGTH = ${RAM_SIZE}/}\" build/pebbleos.ld.pre > build/membrowse.ld",
+    "elf": "build/pebbleos.elf",
+    "ld": "build/membrowse.ld",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "native-flint",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev libsdl2-dev pkg-config && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board native_flint \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" && pbl build",
+    "elf": "build/pebbleos",
+    "ld": "",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "native-emery",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev libsdl2-dev pkg-config && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board native_emery \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" && pbl build",
+    "elf": "build/pebbleos",
+    "ld": "",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "native-gabbro",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y gettext librsvg2-bin protobuf-compiler device-tree-compiler swig libglib2.0-dev libgtk-3-dev libsdl2-dev pkg-config && curl -LsSf https://github.com/coredevices/PebbleOS-SDK/releases/download/v$(cat SDK_VERSION)/pebbleos-sdk-installer.sh | sh -s -- --version $(cat SDK_VERSION) --defaults && pip install -U pip && pip install -r requirements.txt",
+    "build_cmd": "pbl configure --board native_gabbro \"-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map=$PWD/build/pebbleos.map\" && pbl build",
+    "elf": "build/pebbleos",
+    "ld": "",
+    "map_file": "build/pebbleos.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  }
+]
